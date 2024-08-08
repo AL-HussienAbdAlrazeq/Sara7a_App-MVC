@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 
 import mongoSession from "connect-mongodb-session";
 let MongoDBStore = mongoSession(session);
-let store = MongoDBStore({
+let store =new MongoDBStore({
   uri: "mongodb+srv://Sara7a_App_MVC:iW3Lb6EbQ175Hp5y@cluster0.pvn4zwe.mongodb.net/Sara7a_MVC",
   databaseName: 'Sara7a_MVC',
   collection: "mySessions",
@@ -27,7 +27,8 @@ app.use(
     store: store,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 4 // 4 days
-    }
+    },
+    
   })
 );
 app.use(cors());
