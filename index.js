@@ -7,6 +7,7 @@ import registerRouter from "./src/modules/register/register.routes.js";
 import messageRouter from "./src/modules/messages/message.routes.js";
 import userRouter from "./src/modules/user/user.routes.js";
 import cors from 'cors'
+import 'dotenv/config'
 const app = express();
 const port = process.env.PORT||3000;
 
