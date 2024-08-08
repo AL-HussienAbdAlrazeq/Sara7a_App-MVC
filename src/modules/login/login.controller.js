@@ -13,9 +13,6 @@ const handleLogin = catchError(async (req, res, next) => {
   if (!user) {
     return res.redirect("/login?error=Incorrect Email or Password");
   }
-  let hour = 3600000;
-  req.session.cookie.expires = new Date(Date.now() + hour);
-  req.session.cookie.maxAge = hour;
   req.session.isLoggedIn = true;
   (req.session.userId = user._id), (req.session.name = user.name);
   res.redirect("/messages");
