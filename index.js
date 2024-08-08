@@ -14,7 +14,7 @@ const port = process.env.PORT||3000;
 import mongoSession from "connect-mongodb-session";
 let MongoDBStore = mongoSession(session);
 let store = MongoDBStore({
-  uri: "mongodb://localhost:27017/Sara7a_MVC",
+  uri: "mongodb+srv://Sara7a_App_MVC:iW3Lb6EbQ175Hp5y@cluster0.pvn4zwe.mongodb.net/Sara7a_MVC",
   collection: "mySessions",
 });
 app.use(
