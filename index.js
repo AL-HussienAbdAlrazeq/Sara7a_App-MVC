@@ -15,13 +15,13 @@ const port = process.env.PORT || 3000;
 import mongoSession from "connect-mongodb-session";
 let MongoDBStore = mongoSession(session);
 let store =new MongoDBStore({
-  uri: "mongodb+srv://Sara7a_App_MVC:iW3Lb6EbQ175Hp5y@cluster0.pvn4zwe.mongodb.net/Sara7a_MVC",
-  databaseName: 'Sara7a_MVC',
-  collection: "mySessions",
+  uri: process.env.DB_ONLINE_CONNECTION,
+  databaseName: process.env.DB_NAME,
+  collection: process.env.COLLECTION,
 });
 app.use(
   session({
-    secret: "Sara7aMVCApp",
+    secret: process.env.SECRET_SESSION,
     resave: false,
     saveUninitialized: false,
     store: store,
