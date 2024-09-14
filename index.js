@@ -22,6 +22,7 @@ let store =new MongoDBStore({
 app.use(
   session({
     secret: process.env.SECRET_SESSION,
+    uri: process.env.DB_ONLINE_CONNECTION,
     resave: false,
     saveUninitialized: false,
     store: store,
